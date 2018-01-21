@@ -1,5 +1,4 @@
-// @include font-face('Digital Counter', fonts/digital_counter_7);
-
+@import url(https://fonts.googleapis.com/css?family=Orbitron);
 body {
 	background-color: #000;
 	font-family: 'Open Sans', sans-serif;
@@ -49,11 +48,16 @@ body {
 			caret-color: transparent;
 			background: transparent;
 			border: 0;
-			font-size: 3.6em;
+			font-size: 2.5em;
 			color: rgb(196,112,38);
-			font-family: inherit;
+			font-family: 'Orbitron', sans-serif;
+			text-align: right;
 		}
-  }
+	}
+	
+	.center {
+		text-align: center !important;
+	}
   
   #inner-display {
 	position: absolute;

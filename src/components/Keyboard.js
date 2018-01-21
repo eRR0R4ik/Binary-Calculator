@@ -6,16 +6,34 @@ class Keyboard extends Component {
 	constructor(props) {
 		super(props)
 	}
-	countBinary() {
-		
+	countBinary() {	
+		let numbers, x, y, sum, sub, binary; 
+		if (this.binaryValue.value.indexOf('+') != -1) {
+			numbers = this.binaryValue.value.split('+');
+			x = parseInt(numbers[0], 2);
+			y = parseInt(numbers[1], 2);
+			sum = x + y;
+			binary = sum.toString(2);
+		} else if (this.binaryValue.value.indexOf('-') != -1) {
+			numbers = this.binaryValue.value.split('-');
+			x = parseInt(numbers[0], 2);
+			y = parseInt(numbers[1], 2);
+			sub = x - y;
+			binary = sub.toString(2);
+		} else {
+			return;
+		}
+
+		this.props.equal(binary);
 	}
 	render() {
-		const { value, addElem, clear, equal, memorySave, memoryGet, memoryClear } = this.props;
+		const { value, addElem, clear, memorySave, memoryGet, memoryClear } = this.props;
 		return (
 			<div>
 				<div id="display">
 					<div id="inner-display">
-						<input className="display-input" type="text" value={ value } disabled readOnly />
+						<input className={`display-input ${value == 'WELCOME' ? 'center' : ''}`} ref={(input) => { this.binaryValue = input }} 
+						type="text" value={ value } disabled readOnly />
 					</div>
 				</div>
 				<div className="keyboard">
@@ -39,7 +57,7 @@ class Keyboard extends Component {
 					</div>
 					<div id="row-five-keys">
 						<ul id="row5">
-							<li id="equals"><button type="button" className="equals" onClick={ equal.bind(this, value) } /></li>
+							<li id="equals"><button type="button" className="equals" onClick={ this.countBinary.bind(this) } /></li>
 							<li id="plus"><button type="button" className="plus" onClick={ addElem.bind(this, '+') } /></li>
 							<li id="minus"><button type="button" className="minus" onClick={ addElem.bind(this, '-') }/></li>
 						</ul>

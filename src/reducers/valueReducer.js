@@ -1,6 +1,6 @@
 const initState = {
 	value: 'WELCOME',
-	memory: 0
+	memory: ''
 }
 
 const valueReducer = (state = initState, action) => {
@@ -15,7 +15,7 @@ const valueReducer = (state = initState, action) => {
 		console.error('CLEAR', state, action);
 		return{
 			...state,
-			value: 0
+			value: ''
 		}
 	case 'EQUAL':
 		console.error('EQUAL', state, action);
@@ -39,8 +39,8 @@ const valueReducer = (state = initState, action) => {
 		console.error('CLEAR_MEMORY', state, action);
 		return{
 			...state,
-			value: 0,
-			memory: 0
+			value: '',
+			memory: ''
 		}
 	default:
 		return state;

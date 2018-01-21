@@ -12,14 +12,22 @@ class Keyboard extends Component {
 			numbers = this.binaryValue.value.split('+');
 			x = parseInt(numbers[0], 2);
 			y = parseInt(numbers[1], 2);
-			sum = x + y;
-			binary = sum.toString(2);
+			if(y) {
+				sum = x + y;
+				binary = sum.toString(2);
+			} else {
+				return;
+			}
 		} else if (this.binaryValue.value.indexOf('-') != -1) {
 			numbers = this.binaryValue.value.split('-');
 			x = parseInt(numbers[0], 2);
 			y = parseInt(numbers[1], 2);
-			sub = x - y;
-			binary = sub.toString(2);
+			if(y) {
+				sum = x - y;
+				binary = sum.toString(2);
+			} else {
+				return;
+			}
 		} else {
 			return;
 		}
@@ -32,7 +40,8 @@ class Keyboard extends Component {
 			<div>
 				<div id="display">
 					<div id="inner-display">
-						<input className={`display-input ${value == 'WELCOME' ? 'center' : ''}`} ref={(input) => { this.binaryValue = input }} 
+						<input className={`display-input ${value == 'WELCOME' || value == 'STORED' 
+						|| value == 'REMOVED' || value == 'EMPTY' ? 'center' : ''}`} ref={(input) => { this.binaryValue = input }} 
 						type="text" value={ value } disabled readOnly />
 					</div>
 				</div>

@@ -1,13 +1,13 @@
 {
-  "name": "lesson4-chat",
+  "name": "binary-calculator",
   "version": "1.0.0",
-  "description": "chat",
+  "description": "Binary Calculator",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --colors --progress"
   },
-  "author": "Vlad Feninets <v.feninets@gmail.com>",
+  "author": "Oleh Odoviichuk",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.22.1",

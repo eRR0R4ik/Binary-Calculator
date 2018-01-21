@@ -37,7 +37,7 @@ const webpackConfig = {
 				]
 			},
 			{
-				test: /\.(gif|png|jpg|jpeg|svg)$/,
+				test: /\.(gif|png|jpg|jpeg|svg|ttf|eot|woff|woff2)$/,
 				exclude: /node_modules/,
 				include: path.resolve(__dirname, './src/assets/'),
 				use: 'url-loader?limit=10000&name=assets/[name]-[hash].[ext]'

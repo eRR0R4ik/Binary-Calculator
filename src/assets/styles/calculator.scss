@@ -1,0 +1,729 @@
+// @include font-face('Digital Counter', fonts/digital_counter_7);
+
+body {
+	background-color: #000;
+	font-family: 'Open Sans', sans-serif;
+  }
+  
+  li {
+	cursor: pointer;
+  }
+  
+  .main {
+	position: relative;
+	margin: 0 auto;
+	background-image: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/machine.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 600px;
+	width: 800;
+  }
+  
+  #calculator {
+	position: relative;
+	;
+	margin: 60px auto;
+	top: 40px;
+	width: 410px;
+	height: 500px;
+	border: solid 5px #333333;
+	border-radius: 25px;
+	background-image: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/background.gif);
+	background-repeat: no-repeat;
+	background-size: 500px 500px;
+	box-shadow: 5px 8px 6px #111111;
+  }
+  
+  #display {
+	background-color: #000;
+	border: 15px #333333;
+	border-radius: 15px;
+	border-style: solid;
+	margin: 10px auto;
+	height: 90px;
+	width: 285px;
+		.display-input {
+			width: 98%;
+			height: 100%;
+			outline: 0;
+			caret-color: transparent;
+			background: transparent;
+			border: 0;
+			font-size: 3.6em;
+			color: rgb(196,112,38);
+			font-family: inherit;
+		}
+  }
+  
+  #inner-display {
+	position: absolute;
+	top: 20px;
+	left: 57px;
+	background-color: #000;
+	border: solid 6px #000;
+	border-radius: 20px;
+	height: 90px;
+	width: 285px;
+	margin: 0 auto;
+  }
+  
+  #nixies {
+	position: relative;
+	margin: auto;
+	left: 5px;
+  }
+  
+  #nixies li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: 0;
+	height: 88px;
+	display: block;
+  }
+  
+  #nixie7 {
+	left: 2px;
+	width: 33px;
+	background-image: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/nixies.png);
+	background-position: -326px 0; // 0 0;
+  }
+  
+  #nixie6 {
+	left: 35px;
+	width: 33px;
+	background-image: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/nixies.png);
+	background-position: -326px 0; // -33px 0 ;
+  }
+  
+  #nixie5 {
+	left: 68px;
+	width: 33px;
+	background-image: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/nixies.png);
+	background-position: -326px 0; // -66px 0;
+  }
+  
+  #nixie4 {
+	left: 101px;
+	width: 33px;
+	background-image: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/nixies.png);
+	background-position: -326px 0; // -99px 0;
+  }
+  
+  #nixie3 {
+	left: 134px;
+	width: 33px;
+	background-image: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/nixies.png);
+	background-position: -326px 0; // -130px 0;
+  }
+  
+  #nixie2 {
+	left: 167px;
+	width: 33px;
+	background-image: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/nixies.png);
+	background-position: -326px 0; // -162 0;
+  }
+  
+  #nixie1 {
+	left: 200px;
+	width: 33px;
+	background-image: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/nixies.png);
+	background-position: -326px 0; // -195 0;
+  }
+  
+  #nixie0 {
+	left: 233px;
+	width: 33px;
+	background-image: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/nixies.png);
+	background-position: 0 0; // -228 0;
+  }
+  
+  #nixieoff {
+	left: 342;
+	width: 33px;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/nixies.png);
+	background-position: -326px 0;
+  }
+  
+  #nixiedot {
+	left: 376px;
+	width: 33px;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/nixies.png);
+	background-position: -359px 0;
+  }
+  
+  
+  /* ul row-one-keys div */
+  
+  #row-one-keys {
+	position: relative;
+	margin: auto;
+	left: 5px;
+  }
+  
+  
+  /* function keys C,M+,M-,MR,MC*/
+  
+  #row-one-keys li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: 0;
+	height: 70px;
+	width: 70px;
+	display: block;
+	border-color: #000;
+	border-radius: 50%;
+  }
+  
+  #clear {
+	left: 317px;
+  }
+	
+	button {
+		cursor: pointer;
+	}
+
+  button.clear {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -358px -70px;
+	background-size: 715px 140px;
+	border-width: 0;
+  }
+  
+  button.clear:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -358px 0;
+	background-size: 715px 140px;
+  }
+  
+  #memplus {
+	left: 243px;
+	width: 80px;
+  }
+  
+  button.memplus {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -430px -70px;
+	background-size: 715px 140px;
+	border-width: 0;
+  }
+  
+  button.memplus:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -430px 0;
+	background-size: 715px 140px;
+  }
+  
+  #memminus {
+	left: 317px;
+	width: 80px;
+  }
+  
+  button.memminus {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -501px -70px;
+	background-size: 715px 140px;
+	border-width: 0;
+  }
+  
+  button.memminus:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -501px 0;
+	background-size: 715px 140px;
+  }
+  
+  #memrecall {
+	left: 243px;
+	width: 80px;
+  }
+  
+  button.memrecall {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -573px -70px;
+	background-size: 715px 140px;
+	border-width: 0;
+  }
+  
+  button.memrecall:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -573px 0;
+	background-size: 715px 140px;
+  }
+  
+  #memclear {
+	left: 317px;
+	width: 80px;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -645px -70px;
+	background-size: 715px 140px;
+  }
+  
+  button.memclear {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -645px -70px;
+	background-size: 715px 140px;
+	border-width: 0;
+  }
+  
+  button.memclear:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -645px 0;
+	background-size: 715px 140px;
+  }
+  
+  
+  /* ul row-two-keys div */
+  
+  #row-two-keys {
+	position: relative;
+	top: 72px;
+	margin: auto;
+	left: 3px;
+  }
+  
+  
+  /* function keys 7,8,9,x,/ */
+  
+  #row-two-keys li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: 0;
+	height: 70px;
+	width: 70px;
+	display: block;
+	border-color: #000;
+	border-radius: 50%;
+  }
+  
+  #seven {
+	left: 15px;
+	width: 80px;
+  }
+  
+  button.seven {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -501px 0;
+	background-size: 786px 140px;
+	border-width: 0;
+  }
+  
+  button.seven:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -500px -69px;
+	background-size: 786px 140px;
+  }
+  
+  #eight {
+	left: 93px;
+	width: 80px;
+  }
+  
+  button.eight {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -573px 0;
+	background-size: 786px 140px;
+	border-width: 0;
+  }
+  
+  button.eight:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -572px -69px;
+	background-size: 786px 140px;
+  }
+  
+  #nine {
+	left: 169px;
+	width: 80px;
+  }
+  
+  button.nine {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -645px 0;
+	background-size: 786px 140px;
+	border-width: 0;
+  }
+  
+  button.nine:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -644px -69px;
+	background-size: 786px 140px;
+  }
+  
+  
+  /* ul row-three-keys div */
+  
+  #row-three-keys {
+	position: relative;
+	top: 142px;
+	margin: auto;
+	left: 3px;
+  }
+  
+  
+  /* function keys 4,5,6,+,- */
+  
+  #row-three-keys li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: 0;
+	height: 70px;
+	width: 70px;
+	display: block;
+	border-color: #000;
+	border-radius: 50%;
+  }
+  
+  #four {
+	left: 15px;
+	width: 80px;
+  }
+  
+  button.four {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -285px 0;
+	background-size: 786px 140px;
+	border-width: 0;
+  }
+  
+  button.four:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -284px -69px;
+	background-size: 786px 140px;
+  }
+  
+  #five {
+	left: 93px;
+	width: 80px;
+  }
+  
+  button.five {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -357px 0;
+	background-size: 786px 140px;
+	border-width: 0;
+  }
+  
+  button.five:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -356px -69px;
+	background-size: 786px 140px;
+  }
+  
+  #six {
+	left: 169px;
+	width: 80px;
+  }
+  
+  button.six {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -429px 0;
+	background-size: 786px 140px;
+	border-width: 0;
+  }
+  
+  button.six:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -428px -69px;
+	background-size: 786px 140px;
+  }
+  
+  
+  /* ul row-four-keys div */
+  
+  #row-four-keys {
+	position: relative;
+	top: 212px;
+	margin: auto;
+	left: 3px;
+  }
+  
+  
+  /* function keys 1,2,3,= */
+  
+  #row-four-keys li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: 0;
+	height: 70px;
+	width: 70px;
+	display: block;
+	border-color: #000;
+	border-radius: 50%;
+  }
+  
+  #one {
+	left: 15px;
+	width: 80px;
+  }
+  
+  button.one {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -71px 0;
+	background-size: 786px 140px;
+	border-width: 0;
+  }
+  
+  button.one:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -70px -69px;
+	background-size: 786px 140px;
+  }
+  
+  #two {
+	left: 93px;
+	width: 80px;
+  }
+  
+  button.two {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -143px 0;
+	background-size: 786px 140px;
+	border-width: 0;
+  }
+  
+  button.two:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -142px -69px;
+	background-size: 786px 140px;
+  }
+  
+  #three {
+	left: 169px;
+	width: 80px;
+  }
+  
+  button.three {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -215px 0;
+	background-size: 786px 140px;
+	border-width: 0;
+  }
+  
+  button.three:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -214px -69px;
+	background-size: 786px 140px;
+  }
+  
+  #multiply {
+	left: 242px;
+	width: 80px;
+  }
+  
+  button.multiply {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -142px -70px;
+	background-size: 715px 140px;
+	border-width: 0;
+  }
+  
+  button.multiply:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -142px 0;
+	background-size: 715px 140px;
+  }
+  
+  #divide {
+	left: 317px;
+	width: 80px;
+  }
+  
+  button.divide {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -214px -70px;
+	background-size: 715px 140px;
+	border-width: 0;
+  }
+  
+  button.divide:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -214px 0;
+	background-size: 715px 140px;
+  }
+  
+  
+  /* ul row-five-keys div */
+  
+  #row-five-keys {
+	position: relative;
+	top: 282px;
+	margin: auto;
+	left: -72px;
+  }
+  
+  
+  /* function keys 1,2,3,= */
+  
+  #row-five-keys li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: 0;
+	height: 70px;
+	width: 70px;
+	display: block;
+	border-color: #000;
+	border-radius: 50%;
+  }
+  
+  #zero {
+	left: 15px;
+	width: 80px;
+  }
+  
+  button.zero {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) 0 0;
+	background-size: 786px 140px;
+	border-width: 0;
+  }
+  
+  button.zero:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) 1px -69px;
+	background-size: 786px 140px;
+  }
+  
+  #dot {
+	left: 93px;
+	width: 80px;
+  }
+  
+  button.dot {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -715px 0;
+	background-size: 786px 140px;
+	border-width: 0;
+  }
+  
+  button.dot:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/numkeys-all.png) -714px -69px;
+	background-size: 786px 140px;
+  }
+  
+  #equals {
+	left: 169px;
+	width: 80px;
+  }
+  
+  button.equals {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -287px -70px;
+	background-size: 715px 140px;
+	border-width: 0;
+  }
+  
+  button.equals:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -287px 0;
+	background-size: 715px 140px;
+  }
+  
+  #plus {
+	left: 242px;
+	width: 80px;
+  }
+  
+  button.plus {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) 0 -70px;
+	background-size: 715px 140px;
+	border-width: 0;
+  }
+  
+  button.plus:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) 0px 0;
+	background-size: 715px 140px;
+  }
+  
+  #minus {
+	left: 317px;
+	width: 80px;
+  }
+  
+  button.minus {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-decoration: none;
+	outline-style: none;
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -71px -70px;
+	background-size: 715px 140px;
+	border-width: 0;
+  }
+  
+  button.minus:active {
+	background: url(https://raw.githubusercontent.com/pahosler/freecodecamp/master/www/calculator/images/funckeys-all.png) -71px 0;
+	background-size: 715px 140px;
+  }
